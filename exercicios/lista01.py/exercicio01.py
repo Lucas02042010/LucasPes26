@@ -1,4 +1,4 @@
-compra = float(input("Ganhou desconto?"))
+compra = float(input("Qual foi o preço pago?"))
 
 if compra >= 100:
     print("Você ganhou um cupom de desconto!")
