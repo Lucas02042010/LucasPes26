@@ -19,8 +19,7 @@ contabancaria1 = contabancaria("Zanzan", "100")
 contabancaria1.depositar()
 contabancaria1.sacar()
 
-# print("Titular:", contabancaria1.titular)
-# print("Saldo atual:", contabancaria1.mostrar_saldo())
+
 
 
 
