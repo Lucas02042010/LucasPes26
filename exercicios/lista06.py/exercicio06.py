@@ -71,3 +71,8 @@ elif escolha == 0:
 
 else:
         print("\nOpção inválida! Tente novamente.")
+
+
+
+
+        #prof n consegui fazer essa nem com o chat
