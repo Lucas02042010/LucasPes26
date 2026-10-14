@@ -1,5 +1,4 @@
-
-class pessoa: 
+class Pessoa:
     def __init__(self, nome, idade, altura, peso):
         self.nome = nome
         self.idade = idade
@@ -8,71 +7,48 @@ class pessoa:
 
     def exibir(self):
         print(self.nome, self.idade, self.altura, self.peso)
-        
-    def IMC(self): 
-        imcc = self.peso/(self.altura*self.altura)
-        return (imcc)
-    
-    def sla(self):
-        imccc = self.peso/(self.altura*self.altura)
-        return (self.nome, imccc) 
 
-Pessoa1 = pessoa("Arthur", 17, 1.8, 56)
-Pessoa2 = pessoa("Luiz", 18, 1.6, 98)
-Pessoa3 = pessoa("emmeadosde2012", 16, 1.5, 120)
+    def imc(self):
+        return self.peso / (self.altura * self.altura)
 
-Pessoa= [Pessoa1, Pessoa2, Pessoa3]
-
-for i in Pessoa:
-    i.exibir()
-    i.IMC()
-    i.sla()
+    def nome_imc(self):
+        print(self.nome, self.imc())
 
 
+cadastro = []
 
-
-
-
-cadastro  = []
-
-escolha =-67
+escolha = -1
 
 while escolha != 0:
-    print("""
-Amigos Próximos
----------------
-1 - Cadastrar
-2 - Listar
-0 - Sair
-""")
-escolha = int(input("Opção: "))
+    print("Cadastro de Pessoas")
+    print("-------------------")
+    print("1 - Cadastrar")
+    print("2 - Listar")
+    print("0 - Sair")
 
-if escolha == 1:
+    escolha = int(input("Opção: "))
+
+    if escolha == 1:
         nome = input("Nome: ")
         idade = int(input("Idade: "))
-        altura = float(input("Altura (ex: 1.75): "))
-        peso = float(input("Peso (ex: 70.5): "))
+        altura = float(input("Altura: "))
+        peso = float(input("Peso: "))
 
-        # Instancia o objeto da classe Pessoa e adiciona à lista
         nova_pessoa = Pessoa(nome, idade, altura, peso)
         cadastro.append(nova_pessoa)
-        print("\nPessoa cadastrada com sucesso!")
 
-elif escolha == 2:
+        print("Pessoa cadastrada")
+
+    elif escolha == 2:
         if len(cadastro) == 0:
-            print("\nNenhuma pessoa cadastrada.")
+            print("Nenhuma pessoa cadastrada")
         else:
-            print("\n--- Pessoas Cadastradas ---")
-            for p in cadastro:
-                p.exibir()
+            for i in range(len(cadastro)):
+                cadastro[i].exibir()
+                cadastro[i].nome_imc()
 
-elif escolha == 0:
-        print("\nSaindo do programa...")
+    elif escolha == 0:
+        print("Saindo do programa")
 
-else:
-        print("\nOpção inválida! Tente novamente.")
-
-
-
-
-        #prof n consegui fazer essa nem com o chat
+    else:
+        print("Opcao invalida")
